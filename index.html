@@ -815,99 +815,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/11/tools_bp_setting/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blog-avatar.jpg">
-      <meta itemprop="name" content="z1">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="z1's Blog">
-      <meta itemprop="description" content="脚踏实地，仰望星空">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | z1's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/11/11/tools_bp_setting/" class="post-title-link" itemprop="url">SRC-burpsuite配置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-11-11 00:00:00" itemprop="dateCreated datePublished" datetime="2024-11-11T00:00:00+08:00">2024-11-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-21 19:59:25" itemprop="dateModified" datetime="2025-08-21T19:59:25+08:00">2025-08-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="挖洞环境配置"><a href="#挖洞环境配置" class="headerlink" title="挖洞环境配置"></a>挖洞环境配置</h1><h2 id="bp批量自动改包"><a href="#bp批量自动改包" class="headerlink" title="bp批量自动改包"></a>bp批量自动改包</h2><ul>
-<li><p><strong>应用场景：存在权限校验的场景可以尝试</strong></p>
-<p>因为在有些站点只在前端进行了校验，后端未作验证，可以用这种方法绕过，从而获取高级权限。</p>
-</li>
-<li><p>操作方法：Proxy -&gt; Proxy settings -&gt; Tools -&gt; Proxy -&gt; Match and replace rules  改响应包，即 <code>response body</code></p>
-<p><img src="/./images/image-20241030205436086.png" alt="image-20241030205436086"></p>
-</li>
-</ul>
-<h2 id="过滤杂包"><a href="#过滤杂包" class="headerlink" title="过滤杂包"></a>过滤杂包</h2><ul>
-<li><p>浏览器代理插件设置，走bp代理的模式下将不走代理的域名写入不代理的地址列表那一栏。</p>
-<p><img src="/./images/Snipaste_2024-10-30_21-10-33.png" alt="Snipaste_2024-10-30_21-10-33"></p>
-</li>
-<li><p>bp中设置，bp中对应的包中右键然后选中 <code>Don&#39;t intercept requests -&gt; To this host</code>,这样就会跳过该包对应的host。这个方法和下面的方法相同的原理。</p>
-</li>
-<li><p>在bp的 <code>Proxy settings</code> 中设置，如下图位置</p>
-<p><img src="/./images/Snipaste_2024-10-30_21-15-39.png" alt="Snipaste_2024-10-30_21-15-39"></p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/11/js%E6%9C%AA%E6%8E%88%E6%9D%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1112,7 +1019,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/11/%E5%B9%B6%E5%8F%91/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/11/tools_bp_setting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blog-avatar.jpg">
@@ -1130,7 +1037,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/11/11/%E5%B9%B6%E5%8F%91/" class="post-title-link" itemprop="url">SRC-并发漏洞</a>
+          <a href="/2024/11/11/tools_bp_setting/" class="post-title-link" itemprop="url">SRC-burpsuite配置</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1148,7 +1055,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-21 19:59:32" itemprop="dateModified" datetime="2025-08-21T19:59:32+08:00">2025-08-21</time>
+      <time title="修改时间：2025-08-21 19:59:25" itemprop="dateModified" datetime="2025-08-21T19:59:25+08:00">2025-08-21</time>
     </span>
 
   
@@ -1161,49 +1068,116 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="并发漏洞"><a href="#并发漏洞" class="headerlink" title="并发漏洞"></a>并发漏洞</h1><h2 id="1-Turbo-Intrude-–-bp-插件"><a href="#1-Turbo-Intrude-–-bp-插件" class="headerlink" title="1. Turbo Intrude – bp 插件"></a>1. Turbo Intrude – bp 插件</h2><ol>
-<li><p>将要爆破的数据包发送到这个插件中，在插件窗口的请求头中任意位置添加 <code>%s</code> 占位符，然后测试</p>
-<p>或者请求头中添加</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x-req:%s</span><br></pre></td></tr></table></figure>
+          <h1 id="挖洞环境配置"><a href="#挖洞环境配置" class="headerlink" title="挖洞环境配置"></a>挖洞环境配置</h1><h2 id="bp批量自动改包"><a href="#bp批量自动改包" class="headerlink" title="bp批量自动改包"></a>bp批量自动改包</h2><ul>
+<li><p><strong>应用场景：存在权限校验的场景可以尝试</strong></p>
+<p>因为在有些站点只在前端进行了校验，后端未作验证，可以用这种方法绕过，从而获取高级权限。</p>
+</li>
+<li><p>操作方法：Proxy -&gt; Proxy settings -&gt; Tools -&gt; Proxy -&gt; Match and replace rules  改响应包，即 <code>response body</code></p>
+<p><img src="/./images/image-20241030205436086.png" alt="image-20241030205436086"></p>
+</li>
+</ul>
+<h2 id="过滤杂包"><a href="#过滤杂包" class="headerlink" title="过滤杂包"></a>过滤杂包</h2><ul>
+<li><p>浏览器代理插件设置，走bp代理的模式下将不走代理的域名写入不代理的地址列表那一栏。</p>
+<p><img src="/./images/Snipaste_2024-10-30_21-10-33.png" alt="Snipaste_2024-10-30_21-10-33"></p>
+</li>
+<li><p>bp中设置，bp中对应的包中右键然后选中 <code>Don&#39;t intercept requests -&gt; To this host</code>,这样就会跳过该包对应的host。这个方法和下面的方法相同的原理。</p>
+</li>
+<li><p>在bp的 <code>Proxy settings</code> 中设置，如下图位置</p>
+<p><img src="/./images/Snipaste_2024-10-30_21-15-39.png" alt="Snipaste_2024-10-30_21-15-39"></p>
+</li>
+</ul>
 
-<p><img src="/./images/image-20241031193518257.png" alt="image-20241031193518257"></p>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F&app%E6%8A%93%E5%8C%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blog-avatar.jpg">
+      <meta itemprop="name" content="z1">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="z1's Blog">
+      <meta itemprop="description" content="脚踏实地，仰望星空">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | z1's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/11/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F&app%E6%8A%93%E5%8C%85/" class="post-title-link" itemprop="url">SRC-app&小程序抓包</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-11-11 00:00:00" itemprop="dateCreated datePublished" datetime="2024-11-11T00:00:00+08:00">2024-11-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-08-21 19:59:15" itemprop="dateModified" datetime="2025-08-21T19:59:15+08:00">2025-08-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="小程序-app抓包"><a href="#小程序-app抓包" class="headerlink" title="小程序&amp;app抓包"></a>小程序&amp;app抓包</h1><h2 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h2><h3 id="1-Proxifier"><a href="#1-Proxifier" class="headerlink" title="1. Proxifier"></a>1. Proxifier</h3><ol>
+<li><p>Profile -&gt; Proxy Servers -&gt; add 新建一条代理，指向bp</p>
 </li>
-<li><p>在插件窗口中如图位置设置并发次数</p>
-<p><img src="/./images/image-20241031193735040.png" alt="image-20241031193735040"></p>
+<li><p>Profile -&gt; Proxification Rules -&gt; add 新建一条代理规则</p>
+<p><img src="/./images/Proxifier_proxy_rules.png" alt="proxifier代理规则"></p>
 </li>
 </ol>
-<h2 id="2-挖掘技巧"><a href="#2-挖掘技巧" class="headerlink" title="2. 挖掘技巧"></a>2. 挖掘技巧</h2><h3 id="突破限制"><a href="#突破限制" class="headerlink" title="突破限制"></a>突破限制</h3><ol>
-<li><p>短信轰炸</p>
-<p>验证有效性：src平台公告要求；平台限制一个手机号一天接受次数</p>
+<h3 id="2-Reqable"><a href="#2-Reqable" class="headerlink" title="2. Reqable"></a>2. Reqable</h3><ol>
+<li><p>bp新建一条监听规则</p>
+<p><img src="/./images/bp_addListen.png" alt="bp新建监听规则"></p>
 </li>
-<li><p>抽奖</p>
-<ul>
-<li><p>替换响应包导致抽奖结果固定</p>
-</li>
-<li><p>对抽奖请求包进行并发</p>
-<ul>
-<li><p>结果只抽了一次</p>
-</li>
-<li><p>抽了多次，只消耗了一次积分</p>
-</li>
-<li><p>抽了多次消耗了对应数量积分（积分足够）</p>
-</li>
-<li><p>抽取次数超过积分上限，积分清零</p>
-</li>
-<li><p>抽了多次，消耗了对应次数积分，导致最后积分为负</p>
-<p><em><strong>最后一种情况最常见</strong></em></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>提现&amp;兑换</p>
-<p>提现总量或兑换总量超过余额，导致余额为负</p>
+<li><p>Reqable联动bp</p>
+<p>代理 -&gt; 二级代理 -&gt; 新建</p>
+<p>监听地址和端口填写bp中新建的监听器的</p>
+<p><img src="/./images/Reqable-settings.png" alt="Reqable-settings"></p>
 </li>
 </ol>
-<h3 id="事半功倍"><a href="#事半功倍" class="headerlink" title="事半功倍"></a>事半功倍</h3><p>同样操作获得更多报酬。</p>
-<p>如：点赞，收藏，关注，订阅，刷积分，提现，兑换，退款，投票（<strong>存在最多</strong>），评价，抽奖，设为最佳回答(百度知道，获取更多积分，并发获取更多)，积分退回</p>
-<h2 id="并发利用"><a href="#并发利用" class="headerlink" title="并发利用"></a>并发利用</h2><p>绕waf</p>
 
       
     </div>
