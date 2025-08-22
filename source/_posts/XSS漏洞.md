@@ -1,7 +1,7 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
 title:      xss 				    # 标题
-categories: SRC                        # 分类 
+categories: SRC               # 分类 
 date:       2024-11-26 				# 时间
 author:     z1 						# 作者
 catalog: true 						# 是否归档
