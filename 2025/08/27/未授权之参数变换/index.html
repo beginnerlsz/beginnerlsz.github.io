@@ -27,9 +27,10 @@
 <meta property="og:description" content="未授权漏洞挖掘新思路--操作参数，即挖掘短信轰炸漏洞的思路可以用在未授权漏洞挖掘上。系统鉴权不严格，通过参数变换，可以绕过系统权限校验">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-27T06:09:43.000Z">
-<meta property="article:modified_time" content="2025-08-28T04:00:51.703Z">
+<meta property="article:modified_time" content="2025-08-28T07:28:58.273Z">
 <meta property="article:author" content="z1">
-<meta property="article:tag" content="SRC, 未授权">
+<meta property="article:tag" content="越权">
+<meta property="article:tag" content="SRC">
 <meta name="twitter:card" content="summary">
 
 
@@ -158,7 +159,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AA%E6%8E%88%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B9%8B%E5%8F%98%E6%8D%A2%E5%8F%82%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">未授权漏洞之变换参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%9F%AD%E4%BF%A1%E8%BD%B0%E7%82%B8%E6%BC%8F%E6%B4%9E%E6%80%9D%E8%B7%AF%E5%BC%95%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">1. 短信轰炸漏洞思路引入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%BF%AE%E6%94%B9"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 请求头修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%A0%81%E4%BF%AE%E6%94%B9"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 手机号码修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BB%96%E5%8F%82%E6%95%B0%E5%80%BC%E4%BF%AE%E6%94%B9"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 他参数值修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%9C%AA%E6%8E%88%E6%9D%83%E5%BA%94%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">2. 未授权应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%90%8C%E6%97%B6%E4%BF%AE%E6%94%B9id%E5%92%8C%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0%E5%80%BC%E8%B6%8A%E6%9D%83"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 同时修改id和多个参数值越权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%82%E6%95%B0%E9%87%8D%E5%86%99%E8%B6%8A%E6%9D%83"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 参数重写越权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BF%AE%E6%94%B9Id%E5%80%BC%E8%B6%8A%E6%9D%83"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 修改Id值越权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%8F%82%E6%95%B0%E9%81%8D%E5%8E%86%E8%B6%8A%E6%9D%83"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 参数遍历越权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%A8%AA%E5%90%91%E8%B6%8A%E6%9D%83-%E6%8F%90%E6%9D%83"><span class="nav-number">1.2.5.</span> <span class="nav-text">5. 横向越权+提权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Double-write-id"><span class="nav-number">1.2.6.</span> <span class="nav-text">6. Double write id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%8F%82%E6%95%B0%E5%90%8D%E6%94%B9%E5%86%99%E5%8A%A0%E5%A4%9A%E5%86%99"><span class="nav-number">1.2.7.</span> <span class="nav-text">7. 参数名改写加多写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%8E%A5%E5%8F%A3%E5%8F%98%E6%8D%A2"><span class="nav-number">1.3.</span> <span class="nav-text">3. 接口变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%8E%A5%E5%8F%A3%E5%AE%8C%E6%95%B4path%E7%A1%AE%E5%AE%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 接口完整path确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%B6%8A%E6%9D%83"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 越权</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%9F%AD%E4%BF%A1%E8%BD%B0%E7%82%B8%E6%BC%8F%E6%B4%9E%E6%80%9D%E8%B7%AF%E5%BC%95%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">一、短信轰炸漏洞思路引入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%BF%AE%E6%94%B9"><span class="nav-number">1.1.</span> <span class="nav-text">1、请求头修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%A0%81%E4%BF%AE%E6%94%B9"><span class="nav-number">1.2.</span> <span class="nav-text">2、手机号码修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E5%8F%82%E6%95%B0%E5%80%BC%E4%BF%AE%E6%94%B9"><span class="nav-number">1.3.</span> <span class="nav-text">3、参数值修改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%9C%AA%E6%8E%88%E6%9D%83%E5%BA%94%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">二、未授权应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%90%8C%E6%97%B6%E4%BF%AE%E6%94%B9id%E5%92%8C%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0%E5%80%BC%E8%B6%8A%E6%9D%83"><span class="nav-number">2.1.</span> <span class="nav-text">1、同时修改id和多个参数值越权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%8F%82%E6%95%B0%E9%87%8D%E5%86%99%E8%B6%8A%E6%9D%83"><span class="nav-number">2.2.</span> <span class="nav-text">2、参数重写越权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E4%BF%AE%E6%94%B9Id%E5%80%BC%E8%B6%8A%E6%9D%83"><span class="nav-number">2.3.</span> <span class="nav-text">3、修改Id值越权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E5%8F%82%E6%95%B0%E9%81%8D%E5%8E%86%E8%B6%8A%E6%9D%83"><span class="nav-number">2.4.</span> <span class="nav-text">4、参数遍历越权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E6%A8%AA%E5%90%91%E8%B6%8A%E6%9D%83-%E6%8F%90%E6%9D%83"><span class="nav-number">2.5.</span> <span class="nav-text">5、横向越权+提权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81Double-write-id"><span class="nav-number">2.6.</span> <span class="nav-text">6、Double write id</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81%E5%8F%82%E6%95%B0%E5%90%8D%E6%94%B9%E5%86%99%E5%8A%A0%E5%A4%9A%E5%86%99"><span class="nav-number">2.7.</span> <span class="nav-text">7、参数名改写加多写</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%8E%A5%E5%8F%A3%E5%8F%98%E6%8D%A2"><span class="nav-number">3.</span> <span class="nav-text">三、接口变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%8E%A5%E5%8F%A3%E5%AE%8C%E6%95%B4path%E7%A1%AE%E5%AE%9A"><span class="nav-number">3.1.</span> <span class="nav-text">1、接口完整path确定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E8%B6%8A%E6%9D%83"><span class="nav-number">3.2.</span> <span class="nav-text">2、越权</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -184,7 +185,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -255,7 +256,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-28 12:00:51" itemprop="dateModified" datetime="2025-08-28T12:00:51+08:00">2025-08-28</time>
+      <time title="修改时间：2025-08-28 15:28:58" itemprop="dateModified" datetime="2025-08-28T15:28:58+08:00">2025-08-28</time>
     </span>
 
   
@@ -268,11 +269,11 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="未授权漏洞之变换参数"><a href="#未授权漏洞之变换参数" class="headerlink" title="未授权漏洞之变换参数"></a>未授权漏洞之变换参数</h1><h2 id="1-短信轰炸漏洞思路引入"><a href="#1-短信轰炸漏洞思路引入" class="headerlink" title="1. 短信轰炸漏洞思路引入"></a>1. 短信轰炸漏洞思路引入</h2><h3 id="1-请求头修改"><a href="#1-请求头修改" class="headerlink" title="1. 请求头修改"></a>1. 请求头修改</h3><p>更换ip：使用代理池，每发一次短信更换一次ip(一般存在与内网)，或者修改xff头</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="一、短信轰炸漏洞思路引入"><a href="#一、短信轰炸漏洞思路引入" class="headerlink" title="一、短信轰炸漏洞思路引入"></a>一、短信轰炸漏洞思路引入</h1><h2 id="1、请求头修改"><a href="#1、请求头修改" class="headerlink" title="1、请求头修改"></a>1、请求头修改</h2><p>更换ip：使用代理池，每发一次短信更换一次ip(一般存在与内网)，或者修改xff头</p>
 <p>如众测，可以通过修改如下请求头字段值绕过限制，有的可能时 <code>Client-IP</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X-Forwarded-For: 127.0.0.1</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-手机号码修改"><a href="#2-手机号码修改" class="headerlink" title="2. 手机号码修改"></a>2. 手机号码修改</h3><ol>
+<h2 id="2、手机号码修改"><a href="#2、手机号码修改" class="headerlink" title="2、手机号码修改"></a>2、手机号码修改</h2><ol>
 <li><p>参数后加空格,<code>+</code>,(加号在html中会被转换成空格)</p>
 <p>如<code>phone=13888888888 </code> 和 <code>phone=13888888888+</code></p>
 </li>
@@ -292,7 +293,7 @@
 <p><code>phone</code>字段的值可以在手机号前加<code>86</code>, <code>+86</code>, 等，上面的1~6方法都可以尝试</p>
 </li>
 </ol>
-<h3 id="3-他参数值修改"><a href="#3-他参数值修改" class="headerlink" title="3. 他参数值修改"></a>3. 他参数值修改</h3><ol>
+<h2 id="3、参数值修改"><a href="#3、参数值修改" class="headerlink" title="3、参数值修改"></a>3、参数值修改</h2><ol>
 <li><p>修改时间参数</p>
 <p>比如：<a target="_blank" rel="noopener" href="https://tool.lu/timestamp/">时间戳</a></p>
 </li>
@@ -311,17 +312,17 @@
 <p><em>真实场景测的时候需要测试每一个参数，以确定系统漏洞点</em></p>
 </li>
 </ol>
-<h2 id="2-未授权应用"><a href="#2-未授权应用" class="headerlink" title="2. 未授权应用"></a>2. 未授权应用</h2><h3 id="1-同时修改id和多个参数值越权"><a href="#1-同时修改id和多个参数值越权" class="headerlink" title="1. 同时修改id和多个参数值越权"></a>1. 同时修改id和多个参数值越权</h3><p>一些场景下存在用户对自己创建的素材或应用等进行管理，在素材或者应用等位置会有管理功能(可能是三个点或者其他，可以多留意这些功能点)，下面素材库这个例子的漏洞就出现在这些地方</p>
+<h1 id="二、未授权应用"><a href="#二、未授权应用" class="headerlink" title="二、未授权应用"></a>二、未授权应用</h1><h2 id="1、同时修改id和多个参数值越权"><a href="#1、同时修改id和多个参数值越权" class="headerlink" title="1、同时修改id和多个参数值越权"></a>1、同时修改id和多个参数值越权</h2><p>一些场景下存在用户对自己创建的素材或应用等进行管理，在素材或者应用等位置会有管理功能(可能是三个点或者其他，可以多留意这些功能点)，下面素材库这个例子的漏洞就出现在这些地方</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;platform&quot;</span><span class="punctuation">:</span><span class="number">21</span><span class="punctuation">,</span><span class="attr">&quot;device&quot;</span><span class="punctuation">:</span><span class="number">21</span><span class="punctuation">,</span><span class="attr">&quot;ver&quot;</span><span class="punctuation">:</span><span class="number">6.0</span><span class="punctuation">,</span><span class="attr">&quot;m_id&quot;</span><span class="punctuation">:</span><span class="string">&quot;12345&quot;</span><span class="punctuation">,</span><span class="attr">&quot;tittle&quot;</span><span class="punctuation">:</span><span class="string">&quot;a.jpg&quot;</span><span class="punctuation">,</span><span class="attr">&quot;m_type&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p>仅仅改<code>m_id</code>无权限，仅仅改<code>m_type</code>类型不匹配</p>
 <p>因为这里是素材库，有<code>jpg</code>，也应该有<code>png</code>,<code>gif</code>,<code>MP4</code>等类型,这里需要将<code>m_type</code>和后缀匹配上</p>
 <p>然后修改素材类型和后缀达到重命名其他用户的素材。</p>
 <blockquote>
-<p>[!NOTE]</p>
+<p>&#x2139;&#xfe0f;<strong>提示</strong></p>
 <p>因为仅仅改id无效，所以要更改素材类型，即<code>jpg-&gt;mp4</code>或<code>mp4-&gt;jpg</code>，也可以是其他类型</p>
 </blockquote>
-<h3 id="2-参数重写越权"><a href="#2-参数重写越权" class="headerlink" title="2. 参数重写越权"></a>2. 参数重写越权</h3><p>广告管理场景(也可以是其他资源，比如网易云信等平台提供给其他企业的一些业务资源)</p>
+<h2 id="2、参数重写越权"><a href="#2、参数重写越权" class="headerlink" title="2、参数重写越权"></a>2、参数重写越权</h2><p>广告管理场景(也可以是其他资源，比如网易云信等平台提供给其他企业的一些业务资源)</p>
 <p>存在删除功能</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST /api/v1/ad/deletexxx?customColId=123<span class="built_in">&amp;</span>lang=zh<span class="built_in">_</span>CN<span class="built_in">&amp;</span>accountId=1234 HTTP/2</span><br><span class="line">xxx</span><br><span class="line">xxx</span><br><span class="line"></span><br><span class="line">&#123;&quot;lang&quot;:&quot;zh<span class="built_in">_</span>CN&quot;,&quot;accountId&quot;:1234&#125;</span><br></pre></td></tr></table></figure>
 
@@ -329,16 +330,16 @@
 <li><p>首先要判断哪里做鉴权，这里的鉴权是在url中的参数上做的</p>
 </li>
 <li><p>修改数据包如下，注意第二个<code>accountId</code>前的<code>&amp;</code>前要加一个<code>%</code>，因为直接修改id提示无权限，不加<code>%</code>也不能越权</p>
-<blockquote>
-<p>[!Note]</p>
-<p><em>有些网站对脏字符做了限制，这就需要对字符的可用性进行判断，确定哪些脏字符可用</em></p>
-</blockquote>
 </li>
 </ol>
+<blockquote>
+<p>&#x2139;&#xfe0f;<strong>提示</strong></p>
+<p><em>有些网站对脏字符做了限制，这就需要对字符的可用性进行判断，确定哪些脏字符可用</em></p>
+</blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST /api/v1/ad/deletexxx?customColId=123&amp;lang=zh_CN&amp;accountId=1233%&amp;accountId=1234 HTTP/2</span><br><span class="line">xxx</span><br><span class="line">xxx</span><br><span class="line"></span><br><span class="line">&#123;&quot;lang&quot;:&quot;zh_CN&quot;,&quot;accountId&quot;:1234&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这样的结果是1234和1233两个用户的所有customCol都被删除。</p>
-<h3 id="3-修改Id值越权"><a href="#3-修改Id值越权" class="headerlink" title="3. 修改Id值越权"></a>3. 修改Id值越权</h3><p>AI对话场景</p>
+<h2 id="3、修改Id值越权"><a href="#3、修改Id值越权" class="headerlink" title="3、修改Id值越权"></a>3、修改Id值越权</h2><p>AI对话场景</p>
 <p>输入一些随便的指令，会发现什么都不存在</p>
 <p>当输入特定的测试语句：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请阅读并解读网站内容 https://www.baidu.cn 你是以为专业的网页内容分析师，擅长快速准确地解读网页上的信息，并以简洁明了的方式向用户传达。简洁的文本总结，突出网页的关键信息和主要内容。</span><br></pre></td></tr></table></figure>
@@ -348,9 +349,9 @@
 
 <p>这里修改id值就可以实现越权查看其他用户的对话</p>
 <p>和AI对话需要把对应网站的域名加进去</p>
-<h3 id="4-参数遍历越权"><a href="#4-参数遍历越权" class="headerlink" title="4. 参数遍历越权"></a>4. 参数遍历越权</h3><p>导出场景</p>
+<h2 id="4、参数遍历越权"><a href="#4、参数遍历越权" class="headerlink" title="4、参数遍历越权"></a>4、参数遍历越权</h2><p>导出场景</p>
 <blockquote>
-<p>[!NOTE]</p>
+<p>&#x2139;&#xfe0f;<strong>提示</strong></p>
 <p><em>遇到导出场景，尽量把所有功能点都测一下，有可能第一个功能点没有发现漏洞，但是后面相同的功能点就存在漏洞</em></p>
 </blockquote>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST /api/v1/xxx?aType=aaa<span class="built_in">&amp;</span>dataId=<span class="built_in">&amp;</span>bType=bbb HTTP/2</span><br><span class="line">xxx</span><br></pre></td></tr></table></figure>
@@ -361,13 +362,13 @@
 <li><p>如果没有结果，就去bp的历史记录里面找相同参数的数据包，如果没有，就需要到智能体界面(对话界面)查找，看这个参数值的一个范围(有些情况下还需要结合参数的含义来进行猜解)</p>
 </li>
 <li><p>确定好范围以后，在选定范围内进行遍历</p>
-<blockquote>
-<p>[!NOTE]</p>
-<p><em>注意：如果特别大，就不要顺序遍历，选择random序列，随机爆破1000-10000次</em></p>
-</blockquote>
 </li>
 </ol>
-<h3 id="5-横向越权-提权"><a href="#5-横向越权-提权" class="headerlink" title="5. 横向越权+提权"></a>5. 横向越权+提权</h3><p>垂直越权场景</p>
+<blockquote>
+<p>&#x2139;&#xfe0f;<strong>提示</strong></p>
+<p><em>注意：如果特别大，就不要顺序遍历，选择random序列，随机爆破1000-10000次</em></p>
+</blockquote>
+<h2 id="5、横向越权-提权"><a href="#5、横向越权-提权" class="headerlink" title="5、横向越权+提权"></a>5、横向越权+提权</h2><p>垂直越权场景</p>
 <p>存在于一些商家，店铺，或者企业服务提供商提供的智能化平台上</p>
 <ol>
 <li><p>场景一</p>
@@ -386,7 +387,7 @@
 </ol>
 </li>
 </ol>
-<h3 id="6-Double-write-id"><a href="#6-Double-write-id" class="headerlink" title="6. Double write id"></a>6. Double write id</h3><p>学习网站的场景</p>
+<h2 id="6、Double-write-id"><a href="#6、Double-write-id" class="headerlink" title="6、Double write id"></a>6、Double write id</h2><p>学习网站的场景</p>
 <p>课程上面的<em><strong>三个点</strong></em>里面的功能</p>
 <p>有一个隐藏课程的功能点，有如下数据包</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">POST /api/v2/hideCourse HTTP/2</span><br><span class="line">xxx</span><br><span class="line"></span><br><span class="line">id=1234561<span class="built_in">&amp;</span>status=1</span><br></pre></td></tr></table></figure>
@@ -395,11 +396,12 @@
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">POST /api/v2/hideCourse HTTP/2</span><br><span class="line">xxx</span><br><span class="line"></span><br><span class="line">id=1234561<span class="built_in">&amp;</span>id=1234562<span class="built_in">&amp;</span>status=1</span><br></pre></td></tr></table></figure>
 
 <p>成功越权操作其他用户课程</p>
+<p><a id="double"></a></p>
 <blockquote>
-<p>[!NOTE]</p>
+<p>&#x2139;&#xfe0f;<strong>提示</strong></p>
 <p>有些场景下，后端校验的可能是后面id携带的值，这时候就需要更换两个id的顺序。</p>
 </blockquote>
-<h3 id="7-参数名改写加多写"><a href="#7-参数名改写加多写" class="headerlink" title="7. 参数名改写加多写"></a>7. 参数名改写加<em>多写</em></h3><p>课程学习场景</p>
+<h2 id="7、参数名改写加多写"><a href="#7、参数名改写加多写" class="headerlink" title="7、参数名改写加多写"></a>7、参数名改写加<em>多写</em></h2><p>课程学习场景</p>
 <p>界面上已有功能点都可以测试</p>
 <p><em>但是课程播放里面的功能点也可以去测试</em></p>
 <p>有功能点的数据包如下</p>
@@ -410,10 +412,10 @@
 
 <p>可以成功实现越权</p>
 <blockquote>
-<p>[!NOTE]</p>
-<p>如果按上方方式无法实现越权，可尝试 <strong>6. Double write id</strong> 中NOTE提到的方法</p>
+<p>&#x2139;&#xfe0f;<strong>提示</strong></p>
+<p>如果按上方方式无法实现越权，可尝试 <strong>6. 双写id</strong> 中<a href="#double">NOTE</a>提到的方法</p>
 </blockquote>
-<h2 id="3-接口变换"><a href="#3-接口变换" class="headerlink" title="3. 接口变换"></a>3. 接口变换</h2><h3 id="1-接口完整path确定"><a href="#1-接口完整path确定" class="headerlink" title="1. 接口完整path确定"></a>1. 接口完整path确定</h3><ol>
+<h1 id="三、接口变换"><a href="#三、接口变换" class="headerlink" title="三、接口变换"></a>三、接口变换</h1><h2 id="1、接口完整path确定"><a href="#1、接口完整path确定" class="headerlink" title="1、接口完整path确定"></a>1、接口完整path确定</h2><ol>
 <li><p><em>打开一个接口发现打开的是一个html页面</em></p>
 </li>
 <li><p>把接口path放入js文件查找，查找接口完整path，发现完整的path是由变量拼接得到的</p>
@@ -423,19 +425,21 @@
 <li><p>最后确定接口完整path</p>
 </li>
 </ol>
-<h3 id="2-越权"><a href="#2-越权" class="headerlink" title="2. 越权"></a>2. 越权</h3><ol>
+<h2 id="2、越权"><a href="#2、越权" class="headerlink" title="2、越权"></a>2、越权</h2><ol>
 <li><p>访问接口-&gt;响应码为500，服务器内部错误</p>
 <p>这通常是由于访问参数不对</p>
 </li>
 <li><p>给接口加参数，一般是加id，可能会返回错误信息，即缺少什么参数，加上对应的参数以及对应值</p>
+</li>
+</ol>
 <blockquote>
-<p>[!NOTE]</p>
+<p><strong>提示</strong></p>
 <p>有些情况下可能不止一个参数，加上正确的参数以后还是返回500，这是可以再加一个<code>id=x</code>，检查响应的数据包中的提示信息看是缺少参数还是下面3中的情况</p>
 </blockquote>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">职位------position</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果再次返回服务器内部错误，可以尝试变换参数值即<code>positionId=1</code>-&gt;<code>positionId=10</code>,有可能会成功拿到数据。</p>
-</li>
+
+<ol>
+<li>如果再次返回服务器内部错误，可以尝试变换参数值即<code>positionId=1</code>-&gt;<code>positionId=10</code>,有可能会成功拿到数据。</li>
 </ol>
 
     </div>
@@ -446,7 +450,8 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/SRC-%E6%9C%AA%E6%8E%88%E6%9D%83/" rel="tag"><i class="fa fa-tag"></i> SRC, 未授权</a>
+              <a href="/tags/%E8%B6%8A%E6%9D%83/" rel="tag"><i class="fa fa-tag"></i> 越权</a>
+              <a href="/tags/SRC/" rel="tag"><i class="fa fa-tag"></i> SRC</a>
           </div>
 
         
