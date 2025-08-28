@@ -1,6 +1,6 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      SRC-信息收集 				      # 标题 
+title:      信息收集 				      # 标题 
 categories: 信息收集
 date:       2024-10-30 				# 时间
 author:     z1 						# 作者
@@ -51,5 +51,4 @@ description: 信息收集思路
 
 
 - 爱企查（爬虫）
-
 
