@@ -26,16 +26,16 @@
 <meta property="og:site_name" content="z1&#39;s Blog">
 <meta property="og:description" content="小程序&#x2F;app漏洞挖掘方法">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/Proxifier_proxy_rules.png">
-<meta property="og:image" content="http://example.com/images/bp_addListen.png">
-<meta property="og:image" content="http://example.com/images/Reqable-settings.png">
+<meta property="og:image" content="http://example.com/2024/11/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F&app%E6%8A%93%E5%8C%85/images/Proxifier_proxy_rules.png">
+<meta property="og:image" content="http://example.com/2024/11/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F&app%E6%8A%93%E5%8C%85/images/bp_addListen.png">
+<meta property="og:image" content="http://example.com/2024/11/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F&app%E6%8A%93%E5%8C%85/images/Reqable-settings.png">
 <meta property="article:published_time" content="2024-11-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-08-22T12:01:00.397Z">
 <meta property="article:author" content="z1">
 <meta property="article:tag" content="src">
 <meta property="article:tag" content="burpsuite">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/Proxifier_proxy_rules.png">
+<meta name="twitter:image" content="http://example.com/2024/11/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F&app%E6%8A%93%E5%8C%85/images/Proxifier_proxy_rules.png">
 
 
 <link rel="canonical" href="http://example.com/2024/11/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F&app%E6%8A%93%E5%8C%85/">
@@ -164,7 +164,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F-app%E6%8A%93%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">小程序&amp;app抓包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.1.</span> <span class="nav-text">小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Proxifier"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. Proxifier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Reqable"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. Reqable</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#xiao-cheng-xu-amp-app-zhua-bao"><span class="nav-number">1.</span> <span class="nav-text">小程序&amp;app抓包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xiao-cheng-xu"><span class="nav-number">1.1.</span> <span class="nav-text">小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-proxifier"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. Proxifier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-reqable"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. Reqable</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -305,21 +305,29 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="小程序-app抓包"><a href="#小程序-app抓包" class="headerlink" title="小程序&amp;app抓包"></a>小程序&amp;app抓包</h1><h2 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h2><h3 id="1-Proxifier"><a href="#1-Proxifier" class="headerlink" title="1. Proxifier"></a>1. Proxifier</h3><ol>
-<li><p>Profile -&gt; Proxy Servers -&gt; add 新建一条代理，指向bp</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="xiao-cheng-xu-amp-app-zhua-bao">小程序&amp;app抓包</h1>
+<h2 id="xiao-cheng-xu" id="小程序">小程序</h2>
+<h3 id="1-proxifier" id="1-Proxifier">1. Proxifier</h3>
+<ol>
+<li class="lvl-3">
+<p>Profile -&gt; Proxy Servers -&gt; add 新建一条代理，指向bp</p>
 </li>
-<li><p>Profile -&gt; Proxification Rules -&gt; add 新建一条代理规则</p>
-<p><img src="/./images/Proxifier_proxy_rules.png" alt="proxifier代理规则"></p>
+<li class="lvl-3">
+<p>Profile -&gt; Proxification Rules -&gt; add 新建一条代理规则</p>
+<p><img src="./images/Proxifier_proxy_rules.png" alt="proxifier代理规则"></p>
 </li>
 </ol>
-<h3 id="2-Reqable"><a href="#2-Reqable" class="headerlink" title="2. Reqable"></a>2. Reqable</h3><ol>
-<li><p>bp新建一条监听规则</p>
-<p><img src="/./images/bp_addListen.png" alt="bp新建监听规则"></p>
+<h3 id="2-reqable" id="2-Reqable">2. Reqable</h3>
+<ol>
+<li class="lvl-3">
+<p>bp新建一条监听规则</p>
+<p><img src="./images/bp_addListen.png" alt="bp新建监听规则"></p>
 </li>
-<li><p>Reqable联动bp</p>
+<li class="lvl-3">
+<p>Reqable联动bp</p>
 <p>代理 -&gt; 二级代理 -&gt; 新建</p>
 <p>监听地址和端口填写bp中新建的监听器的</p>
-<p><img src="/./images/Reqable-settings.png" alt="Reqable-settings"></p>
+<p><img src="./images/Reqable-settings.png" alt="Reqable-settings"></p>
 </li>
 </ol>
 
@@ -339,13 +347,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/11/11/%E5%B9%B6%E5%8F%91/" rel="prev" title="SRC-并发漏洞">
-                  <i class="fa fa-angle-left"></i> SRC-并发漏洞
+                <a href="/2024/11/11/tools_bp_setting/" rel="prev" title="burpsuite配置">
+                  <i class="fa fa-angle-left"></i> burpsuite配置
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/11/11/tools_bp_setting/" rel="next" title="burpsuite配置">
-                  burpsuite配置 <i class="fa fa-angle-right"></i>
+                <a href="/2024/11/11/sms_bomb/" rel="next" title="短信轰炸">
+                  短信轰炸 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -377,13 +385,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">20k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">32 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

@@ -160,7 +160,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#API%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98"><span class="nav-number">1.</span> <span class="nav-text">API漏洞挖掘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-API%E6%96%87%E6%A1%A3"><span class="nav-number">1.1.</span> <span class="nav-text">1. API文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%AF%86%E5%88%ABAPI%E7%AB%AF%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">2. 识别API端点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%8F%91%E7%8E%B0%E9%9A%90%E8%97%8F%E5%8F%82%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">3. 发现隐藏参数</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#api-lou-dong-wa-jue"><span class="nav-number">1.</span> <span class="nav-text">API漏洞挖掘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-api-wen-dang"><span class="nav-number">1.1.</span> <span class="nav-text">1. API文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-shi-bie-api-duan-dian"><span class="nav-number">1.2.</span> <span class="nav-text">2. 识别API端点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-fa-xian-yin-cang-can-shu"><span class="nav-number">1.3.</span> <span class="nav-text">3. 发现隐藏参数</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -301,34 +301,51 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="API漏洞挖掘"><a href="#API漏洞挖掘" class="headerlink" title="API漏洞挖掘"></a>API漏洞挖掘</h1><h2 id="1-API文档"><a href="#1-API文档" class="headerlink" title="1. API文档"></a>1. API文档</h2><p>找到一个请求特定资源的api端点路径，可以逐步删除每一层路径直至发现api文档</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="api-lou-dong-wa-jue">API漏洞挖掘</h1>
+<h2 id="1-api-wen-dang" id="1-API文档">1. API文档</h2>
+<p>找到一个请求特定资源的api端点路径，可以逐步删除每一层路径直至发现api文档</p>
 <p>例如：<code>/api/swagger/v1/users/123</code> 可以依次审查下面的路径</p>
-<ul>
-<li><code>/api/swagger/v1/users/</code></li>
-<li><code>/api/swagger/v1/users</code></li>
-<li><code>/api/swagger/v1/</code></li>
-<li>…</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>/api/swagger/v1/users/</code></p>
+</li>
+<li class="lvl-2">
+<p><code>/api/swagger/v1/users</code></p>
+</li>
+<li class="lvl-2">
+<p><code>/api/swagger/v1/</code></p>
+</li>
+<li class="lvl-2">
+<p>…</p>
+</li>
 </ul>
-<h2 id="2-识别API端点"><a href="#2-识别API端点" class="headerlink" title="2. 识别API端点"></a>2. 识别API端点</h2><p>通过与API端点交互的方式来确定API端点的详细信息</p>
+<h2 id="2-shi-bie-api-duan-dian" id="2-识别API端点">2. 识别API端点</h2>
+<p>通过与API端点交互的方式来确定API端点的详细信息</p>
 <ol>
-<li><p>API端点支持的 <code>HTTP</code> 请求方法</p>
+<li class="lvl-3">
+<p>API端点支持的 <code>HTTP</code> 请求方法</p>
 <p>通常可以用 <code>OPTIONS</code> 请求方法来确定所请求资源支持的请求方法</p>
 </li>
-<li><p>API端点支持的 <code>Content-Type</code> 类型</p>
+<li class="lvl-3">
+<p>API端点支持的 <code>Content-Type</code> 类型</p>
 <p>可以从报错信息中发现所支持的 <code>Content-Type</code> 类型</p>
 <p>而且也可能从不同的 <code>Content-Type</code> 类型中发现漏洞</p>
 </li>
 </ol>
-<h2 id="3-发现隐藏参数"><a href="#3-发现隐藏参数" class="headerlink" title="3. 发现隐藏参数"></a>3. 发现隐藏参数</h2><p>对同一API端点不同的请求方法包含的请求体或者返回的结果中参数可能会有差异，对比这些差异从而发现可利用的参数</p>
-<p>例如：对 <code>/api/users</code> </p>
+<h2 id="3-fa-xian-yin-cang-can-shu" id="3-发现隐藏参数">3. 发现隐藏参数</h2>
+<p>对同一API端点不同的请求方法包含的请求体或者返回的结果中参数可能会有差异，对比这些差异从而发现可利用的参数</p>
+<p>例如：对 <code>/api/users</code></p>
 <ol>
-<li><p><code>PATCH</code> 系统发出的请求中，请求体中包含的参数为</p>
+<li class="lvl-3">
+<p><code>PATCH</code> 系统发出的请求中，请求体中包含的参数为</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wiener&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wiener@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>但是对于 <code>GET /api/users/123</code> 请求方法，返回结果中包含的参数</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;John Doe&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;john@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;isAdmin&quot;</span><span class="punctuation">:</span> <span class="string">&quot;false&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li class="lvl-3">
+<p>但是对于 <code>GET /api/users/123</code> 请求方法，返回结果中包含的参数</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;John Doe&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;john@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;isAdmin&quot;</span><span class="punctuation">:</span> <span class="string">&quot;false&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>所以可以尝试在 <code>PATCH</code> 方法的请求体中加入 <code>isAdmin</code> </p>
+<p>所以可以尝试在 <code>PATCH</code> 方法的请求体中加入 <code>isAdmin</code></p>
 
     </div>
 
@@ -381,13 +398,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">20k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">32 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

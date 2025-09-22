@@ -159,7 +159,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E5%8F%A3%E6%BC%8F%E6%B4%9E"><span class="nav-number">1.</span> <span class="nav-text">登录口漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95"><span class="nav-number">1.2.</span> <span class="nav-text">任意用户登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C"><span class="nav-number">1.3.</span> <span class="nav-text">任意用户注册</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">1.3.1.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E9%87%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">密码重置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="nav-number">1.5.</span> <span class="nav-text">验证码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="nav-number">1.5.1.</span> <span class="nav-text">短信验证码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E7%A0%81%E7%BC%BA%E9%99%B7"><span class="nav-number">1.5.2.</span> <span class="nav-text">验证码缺陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="nav-number">1.5.3.</span> <span class="nav-text">图形验证码</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#deng-lu-kou-lou-dong"><span class="nav-number">1.</span> <span class="nav-text">登录口漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chang-jing"><span class="nav-number">1.1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ren-yi-yong-hu-deng-lu"><span class="nav-number">1.2.</span> <span class="nav-text">任意用户登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ren-yi-yong-hu-zhu-ce"><span class="nav-number">1.3.</span> <span class="nav-text">任意用户注册</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fen-lei"><span class="nav-number">1.3.1.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mi-ma-zhong-zhi"><span class="nav-number">1.4.</span> <span class="nav-text">密码重置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yan-zheng-ma"><span class="nav-number">1.5.</span> <span class="nav-text">验证码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#duan-xin-yan-zheng-ma"><span class="nav-number">1.5.1.</span> <span class="nav-text">短信验证码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yan-zheng-ma-que-xian"><span class="nav-number">1.5.2.</span> <span class="nav-text">验证码缺陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tu-xing-yan-zheng-ma"><span class="nav-number">1.5.3.</span> <span class="nav-text">图形验证码</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -282,7 +282,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
+      <span>1.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -300,137 +300,182 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="登录口漏洞"><a href="#登录口漏洞" class="headerlink" title="登录口漏洞"></a>登录口漏洞</h1><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ol>
-<li><p>登录</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="deng-lu-kou-lou-dong">登录口漏洞</h1>
+<h2 id="chang-jing" id="场景">场景</h2>
+<ol>
+<li class="lvl-3">
+<p>登录</p>
 <p>任意用户登录，弱口令，万能密码，session模拟登录，Js审查（代码中存在密码泄露）</p>
 </li>
-<li><p>注册</p>
+<li class="lvl-3">
+<p>注册</p>
 <p>如果没有提供注册功能，可以尝试手动构造注册接口</p>
 <p>任意用户注册（注册已存在账户造成账号接管）</p>
 </li>
-<li><p>密码重置</p>
+<li class="lvl-3">
+<p>密码重置</p>
 <p>任意用户密码重置，默认密码，session覆盖</p>
 </li>
-<li><p>验证码</p>
+<li class="lvl-3">
+<p>验证码</p>
 <p>短信，图片，邮箱三类验证码</p>
 </li>
 </ol>
-<h2 id="任意用户登录"><a href="#任意用户登录" class="headerlink" title="任意用户登录"></a>任意用户登录</h2><ul>
-<li><p>常见</p>
-<ul>
-<li>手机号和验证码未绑定：用自己手机号接收验证码，登录时改成其他手机号</li>
-<li>一值传多参：加逗号，一个值带多个参数</li>
-<li>多值混淆：mobile&#x3D;153xxxx&amp;mobile&#x3D;134xxxxx</li>
+<h2 id="ren-yi-yong-hu-deng-lu" id="任意用户登录">任意用户登录</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>常见</p>
+<ul class="lvl-2">
+<li class="lvl-4">手机号和验证码未绑定：用自己手机号接收验证码，登录时改成其他手机号</li>
+<li class="lvl-4">一值传多参：加逗号，一个值带多个参数</li>
+<li class="lvl-4">多值混淆：mobile=153xxxx&amp;mobile=134xxxxx</li>
 </ul>
 </li>
-<li><p>第三方</p>
-<ul>
-<li><p>第三方软件登录：微博&#x2F;微信&#x2F;qq – wxid：xxxx(根据wxid识别账户), 不可遍历id, 通过查找泄露登录其他用户账号</p>
+<li class="lvl-2">
+<p>第三方</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>第三方软件登录：微博/微信/qq – wxid：xxxx(根据wxid识别账户), 不可遍历id, 通过查找泄露登录其他用户账号</p>
 </li>
-<li><p>第三方软件登录：微博&#x2F;微信&#x2F;qq – userid：xxxx(根据userid识别账户), 可遍历id通过篡改id值, 登录其他用户账号</p>
+<li class="lvl-4">
+<p>第三方软件登录：微博/微信/qq – userid：xxxx(根据userid识别账户), 可遍历id通过篡改id值, 登录其他用户账号</p>
 </li>
-<li><p>登录状态下点击授权：点击后携带参数, 如用户id,这时候可以修改id值, 实现任意用户登录</p>
+<li class="lvl-4">
+<p>登录状态下点击授权：点击后携带参数, 如用户id,这时候可以修改id值, 实现任意用户登录</p>
 <blockquote>
-<p>&#x2139;&#xfe0f;<strong>提示</strong></p>
+<p>ℹ️<strong>提示</strong></p>
 <p>这种漏洞多出现在主域名相同而子域名不同的两个站之间</p>
 </blockquote>
 </li>
 </ul>
 <p><em>对这些登录过程进行抓包</em></p>
 </li>
-<li><p>其他</p>
+<li class="lvl-2">
+<p>其他</p>
 <p>登录无二次验证</p>
 </li>
 </ul>
-<h2 id="任意用户注册"><a href="#任意用户注册" class="headerlink" title="任意用户注册"></a>任意用户注册</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
-<li>可覆盖注册：可注册已注册用户<ul>
-<li>数据重置</li>
-<li>接管数据–危害最大</li>
+<h2 id="ren-yi-yong-hu-zhu-ce" id="任意用户注册">任意用户注册</h2>
+<h3 id="fen-lei" id="分类">分类</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>可覆盖注册：可注册已注册用户</p>
+<ul class="lvl-2">
+<li class="lvl-4">数据重置</li>
+<li class="lvl-4">接管数据–危害最大</li>
 </ul>
 </li>
-<li>不可覆盖注册：只能注册未注册用户</li>
+<li class="lvl-2">
+<p>不可覆盖注册：只能注册未注册用户</p>
+</li>
 </ul>
 <p>这里任意用户注册主要针对邮箱注册。开始挖洞时先把注册的业务流程完整走一遍。</p>
 <ol>
-<li><p>邮箱发送激活链接注册</p>
-<ul>
-<li><p>信息填写完成后的返回包泄露 active code 或 激活id</p>
+<li class="lvl-3">
+<p>邮箱发送激活链接注册</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>信息填写完成后的返回包泄露 active code 或 激活id</p>
 </li>
-<li><p>信息填写完成后跳转等待激活页面存在泄露active code 或 激活id</p>
+<li class="lvl-5">
+<p>信息填写完成后跳转等待激活页面存在泄露active code 或 激活id</p>
 </li>
 </ul>
 </li>
-<li><p>尝试注册高权限账号（利用企业域名注册企业邮箱等）</p>
+<li class="lvl-3">
+<p>尝试注册高权限账号（利用企业域名注册企业邮箱等）</p>
 <p>注册的账号权限越高，越好挖。（<em>方便以后挖洞</em>）</p>
-<ul>
-<li><p>xxxx@企业域名</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>xxxx@企业域名</p>
 </li>
-<li><p>whois查询手机号邮箱</p>
+<li class="lvl-5">
+<p>whois查询手机号邮箱</p>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="密码重置"><a href="#密码重置" class="headerlink" title="密码重置"></a>密码重置</h2><ul>
-<li><p>不验证原密码&amp;原密码可绕过</p>
+<h2 id="mi-ma-zhong-zhi" id="密码重置">密码重置</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>不验证原密码&amp;原密码可绕过</p>
 </li>
-<li><p>csrf 提高危害，构造链接让受害者访问达到用户密码重置。</p>
+<li class="lvl-2">
+<p>csrf 提高危害，构造链接让受害者访问达到用户密码重置。</p>
 </li>
 </ul>
-<h2 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h2><h3 id="短信验证码"><a href="#短信验证码" class="headerlink" title="短信验证码"></a>短信验证码</h3><ul>
-<li><p>短信轰炸</p>
+<h2 id="yan-zheng-ma" id="验证码">验证码</h2>
+<h3 id="duan-xin-yan-zheng-ma" id="短信验证码">短信验证码</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>短信轰炸</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%09</span></span><br><span class="line"><span class="comment">%0a</span></span><br><span class="line"><span class="comment">%0c</span></span><br><span class="line"><span class="comment">%0d</span></span><br><span class="line"><span class="comment">%0b</span></span><br><span class="line"><span class="comment">%a0</span></span><br><span class="line">+86</span><br></pre></td></tr></table></figure>
-
 <p><em>+86 如果在界面中没有显示，但是抓包时有可以修改从而绕过</em></p>
 </li>
-<li><p>验证码复用：填正确的验证码发送到repeater模块一直重放，若是不提示验证码错误而一直提示账密错误则存在验证码复用即验证码不过期</p>
+<li class="lvl-2">
+<p>验证码复用：填正确的验证码发送到repeater模块一直重放，若是不提示验证码错误而一直提示账密错误则存在验证码复用即验证码不过期</p>
 </li>
-<li><p>验证码爆破：4，6位都可作为漏洞提交，只要公告中没有明确说明不收</p>
+<li class="lvl-2">
+<p>验证码爆破：4，6位都可作为漏洞提交，只要公告中没有明确说明不收</p>
 <p>6位的话，先接收一个，然后在这一个验证码上下1000个以内利用bp爆破</p>
 </li>
-<li><p>报错回显：填写错误的，响应数据包中存在正确的验证码</p>
+<li class="lvl-2">
+<p>报错回显：填写错误的，响应数据包中存在正确的验证码</p>
 </li>
-<li><p>绑定关系失效</p>
-<ul>
-<li>手机号与验证码未绑定</li>
-<li>双写绕过<ul>
-<li>手机号参数写两个手机号，用 <code>,</code> 或 <code>空格</code> 或 <code>|</code> 隔开</li>
-<li>传入两个手机号参数</li>
+<li class="lvl-2">
+<p>绑定关系失效</p>
+<ul class="lvl-2">
+<li class="lvl-4">手机号与验证码未绑定</li>
+<li class="lvl-4">双写绕过
+<ul class="lvl-4">
+<li class="lvl-6">手机号参数写两个手机号，用 <code>,</code> 或 <code>空格</code> 或 <code>|</code> 隔开</li>
+<li class="lvl-6">传入两个手机号参数</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>修改参数</p>
-<ul>
-<li>状态码</li>
-<li>鉴权相应参数</li>
-<li><code>false</code> 改 <code>true</code></li>
+<li class="lvl-2">
+<p>修改参数</p>
+<ul class="lvl-2">
+<li class="lvl-4">状态码</li>
+<li class="lvl-4">鉴权相应参数</li>
+<li class="lvl-4"><code>false</code> 改 <code>true</code></li>
 </ul>
 </li>
-<li><p>删除验证码字段</p>
+<li class="lvl-2">
+<p>删除验证码字段</p>
 </li>
-<li><p>统一初始化：测试 <code>0000</code> <code>none</code> <code>true</code> <code>1111</code> <code>null</code> 置空</p>
+<li class="lvl-2">
+<p>统一初始化：测试 <code>0000</code> <code>none</code> <code>true</code> <code>1111</code> <code>null</code> 置空</p>
 </li>
-<li><p>任意验证码，后端没有校验验证码，只需要填对位数</p>
+<li class="lvl-2">
+<p>任意验证码，后端没有校验验证码，只需要填对位数</p>
 </li>
 </ul>
-<h3 id="验证码缺陷"><a href="#验证码缺陷" class="headerlink" title="验证码缺陷"></a>验证码缺陷</h3><ol>
-<li><p>验证码校验和账密校验分两步，这种情况下可以尝试抓取账密校验的数据包，直接绕过验证码校验。这种情况属于后端设计缺陷。</p>
+<h3 id="yan-zheng-ma-que-xian" id="验证码缺陷">验证码缺陷</h3>
+<ol>
+<li class="lvl-3">
+<p>验证码校验和账密校验分两步，这种情况下可以尝试抓取账密校验的数据包，直接绕过验证码校验。这种情况属于后端设计缺陷。</p>
 </li>
-<li><p>删除验证码键值对，绕过验证码校验</p>
+<li class="lvl-3">
+<p>删除验证码键值对，绕过验证码校验</p>
 <blockquote>
 <p>后端设计登录逻辑时，留下了开发环境的登录接口，导致不输入验证码时调用的是开发环境的接口，即无需验证码登录的接口。</p>
 </blockquote>
 </li>
 </ol>
-<h3 id="图形验证码"><a href="#图形验证码" class="headerlink" title="图形验证码"></a>图形验证码</h3><ol>
-<li><p>图形验证码DDos：请求验证码的数据包中如果存在图片的大小，则可以通过修改长宽对应的值，造成返回数据包过大，使服务器宕机。</p>
+<h3 id="tu-xing-yan-zheng-ma" id="图形验证码">图形验证码</h3>
+<ol>
+<li class="lvl-3">
+<p>图形验证码DDos：请求验证码的数据包中如果存在图片的大小，则可以通过修改长宽对应的值，造成返回数据包过大，使服务器宕机。</p>
 <blockquote>
-<p>&#x2139;&#xfe0f;<strong>提示</strong></p>
+<p>ℹ️<strong>提示</strong></p>
 <p>一般不要设置太大，防止把服务器搞崩。</p>
 <p>测试的时候只需要修改值，看返回数据包的大小是否变化，如果变了就可以交洞了。</p>
 </blockquote>
 <p><strong>图形验证码DDos fuzz</strong></p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">height=250</span><br><span class="line">width=250</span><br><span class="line">h=250</span><br><span class="line">w=250</span><br><span class="line">size=250</span><br><span class="line">margin=250</span><br><span class="line">font<span class="built_in">_</span>size=250</span><br><span class="line">length=250</span><br><span class="line">height=250*2</span><br><span class="line">width=250*2</span><br><span class="line">h=250*2</span><br><span class="line">w=250*2</span><br><span class="line">size=250*2</span><br><span class="line">margin=250*2</span><br><span class="line">font<span class="built_in">_</span>size=250*2</span><br><span class="line">length=250*2</span><br><span class="line">height=250<span class="built_in">&amp;</span>width=250<span class="built_in">&amp;</span>h=250<span class="built_in">&amp;</span>w=250<span class="built_in">&amp;</span>size=250<span class="built_in">&amp;</span>margin=250<span class="built_in">&amp;</span>font<span class="built_in">_</span>size=250<span class="built_in">&amp;</span>length=250</span><br><span class="line">imageVerifyCodeWidth=250<span class="built_in">&amp;</span>imageVerifyCodeHeight=250</span><br><span class="line">imageVerifyCodeHeight=250</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">height=250</span><br><span class="line">width=250</span><br><span class="line">h=250</span><br><span class="line">w=250</span><br><span class="line">size=250</span><br><span class="line">margin=250</span><br><span class="line">font<span class="built_in">_</span>size=250</span><br><span class="line">length=250</span><br><span class="line">height=250*2</span><br><span class="line">width=250*2</span><br><span class="line">h=250*2</span><br><span class="line">w=250*2</span><br><span class="line">size=250*2</span><br><span class="line">margin=250*2</span><br><span class="line">font<span class="built_in">_</span>size=250*2</span><br><span class="line">length=250*2</span><br><span class="line">height=250<span class="built_in">&amp;</span>width=250<span class="built_in">&amp;</span>h=250<span class="built_in">&amp;</span>w=250<span class="built_in">&amp;</span>size=250<span class="built_in">&amp;</span>margin=250<span class="built_in">&amp;</span>font<span class="built_in">_</span>size=250<span class="built_in">&amp;</span>length=250</span><br><span class="line">imageVerifyCodeWidth=250<span class="built_in">&amp;</span>imageVerifyCodeHeight=250</span><br><span class="line">imageVerifyCodeHeight=250</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
     </div>
@@ -486,13 +531,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">20k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">32 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

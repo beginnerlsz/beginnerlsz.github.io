@@ -26,14 +26,14 @@
 <meta property="og:site_name" content="z1&#39;s Blog">
 <meta property="og:description" content="短信轰炸漏洞挖掘思路">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/bp_intruder_concurrency.png">
+<meta property="og:image" content="http://example.com/2024/11/11/images/bp_intruder_concurrency.png">
 <meta property="article:published_time" content="2024-11-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-08-28T03:38:20.922Z">
 <meta property="article:author" content="z1">
 <meta property="article:tag" content="src">
 <meta property="article:tag" content="逻辑漏洞">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/bp_intruder_concurrency.png">
+<meta name="twitter:image" content="http://example.com/2024/11/11/images/bp_intruder_concurrency.png">
 
 
 <link rel="canonical" href="http://example.com/2024/11/11/sms_bomb/">
@@ -162,7 +162,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E"><span class="nav-number">1.</span> <span class="nav-text">逻辑漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%AD%E4%BF%A1%E8%BD%B0%E7%82%B8%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98"><span class="nav-number">1.1.</span> <span class="nav-text">短信轰炸漏洞挖掘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%BC%8F%E6%B4%9E%E7%82%B9"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 漏洞点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%BB%95%E8%BF%87%E6%8A%80%E5%B7%A7"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 绕过技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%BC%8F%E6%B4%9E"><span class="nav-number">1.2.</span> <span class="nav-text">并发漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%BC%8F%E6%B4%9E%E9%AB%98%E5%8D%B1%E5%9C%BA%E6%99%AF"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 漏洞高危场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%B7%A5%E5%85%B7"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Turbo-Intrude"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">1. Turbo Intrude</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#luo-ji-lou-dong"><span class="nav-number">1.</span> <span class="nav-text">逻辑漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#duan-xin-hong-zha-lou-dong-wa-jue"><span class="nav-number">1.1.</span> <span class="nav-text">短信轰炸漏洞挖掘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-lou-dong-dian"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 漏洞点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-rao-guo-ji-qiao"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 绕过技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bing-fa-lou-dong"><span class="nav-number">1.2.</span> <span class="nav-text">并发漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-lou-dong-gao-wei-chang-jing"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 漏洞高危场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-gong-ju"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-turbo-intrude"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">1. Turbo Intrude</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -303,42 +303,68 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="逻辑漏洞"><a href="#逻辑漏洞" class="headerlink" title="逻辑漏洞"></a>逻辑漏洞</h1><h2 id="短信轰炸漏洞挖掘"><a href="#短信轰炸漏洞挖掘" class="headerlink" title="短信轰炸漏洞挖掘"></a>短信轰炸漏洞挖掘</h2><h3 id="1-漏洞点"><a href="#1-漏洞点" class="headerlink" title="1. 漏洞点"></a>1. 漏洞点</h3><p>任意可以发送短信邮箱验证码的地方</p>
-<h3 id="2-绕过技巧"><a href="#2-绕过技巧" class="headerlink" title="2. 绕过技巧"></a>2. 绕过技巧</h3><ol>
-<li><p>参数后加空格,<code>+</code></p>
+    <div class="post-body" itemprop="articleBody"><h1 id="luo-ji-lou-dong">逻辑漏洞</h1>
+<h2 id="duan-xin-hong-zha-lou-dong-wa-jue" id="短信轰炸漏洞挖掘">短信轰炸漏洞挖掘</h2>
+<h3 id="1-lou-dong-dian" id="1-漏洞点">1. 漏洞点</h3>
+<p>任意可以发送短信邮箱验证码的地方</p>
+<h3 id="2-rao-guo-ji-qiao" id="2-绕过技巧">2. 绕过技巧</h3>
+<ol>
+<li class="lvl-3">
+<p>参数后加空格,<code>+</code></p>
 </li>
-<li><p>参数叠加</p>
+<li class="lvl-3">
+<p>参数叠加</p>
 <p>比如：<code>phone=1333333333&amp;phone=13333333333</code> 有的短信轰炸需要在<code>&amp;</code> 符号前加一个脏字符<code>%</code></p>
 </li>
-<li><p>修改时间参数</p>
+<li class="lvl-3">
+<p>修改时间参数</p>
 <p>比如：<a target="_blank" rel="noopener" href="https://tool.lu/timestamp/">时间戳</a></p>
 </li>
-<li><p>手机号参数头添加<code>+86</code></p>
+<li class="lvl-3">
+<p>手机号参数头添加<code>+86</code></p>
 </li>
-<li><p>手机号参数后加点：<code>13333333333...</code></p>
+<li class="lvl-3">
+<p>手机号参数后加点：<code>13333333333...</code></p>
 <p>这种情况下，每加一个点可以多发一次短信，如此可以借助<code>bp</code> <code>Intrude</code>模块</p>
 </li>
-<li><p>更换ip：使用代理池，每发一次短信更换一次ip(一般存在与内网)，或者修改xff头</p>
+<li class="lvl-3">
+<p>更换ip：使用代理池，每发一次短信更换一次ip(一般存在与内网)，或者修改xff头</p>
 </li>
-<li><p>请求头绕过，分析请求体中用于验证的部分，更改验证字段</p>
+<li class="lvl-3">
+<p>请求头绕过，分析请求体中用于验证的部分，更改验证字段</p>
 </li>
-<li><p>并发绕过（可能导致ip被封）</p>
+<li class="lvl-3">
+<p>并发绕过（可能导致ip被封）</p>
 </li>
 </ol>
-<h2 id="并发漏洞"><a href="#并发漏洞" class="headerlink" title="并发漏洞"></a>并发漏洞</h2><h3 id="1-漏洞高危场景"><a href="#1-漏洞高危场景" class="headerlink" title="1. 漏洞高危场景"></a>1. 漏洞高危场景</h3><ol>
-<li>领取优惠券</li>
-<li>充值</li>
-<li>提现</li>
-<li>订单支付</li>
+<h2 id="bing-fa-lou-dong" id="并发漏洞">并发漏洞</h2>
+<h3 id="1-lou-dong-gao-wei-chang-jing" id="1-漏洞高危场景">1. 漏洞高危场景</h3>
+<ol>
+<li class="lvl-3">
+<p>领取优惠券</p>
+</li>
+<li class="lvl-3">
+<p>充值</p>
+</li>
+<li class="lvl-3">
+<p>提现</p>
+</li>
+<li class="lvl-3">
+<p>订单支付</p>
+</li>
 </ol>
-<h3 id="2-工具"><a href="#2-工具" class="headerlink" title="2. 工具"></a>2. 工具</h3><h4 id="1-Turbo-Intrude"><a href="#1-Turbo-Intrude" class="headerlink" title="1. Turbo Intrude"></a>1. Turbo Intrude</h4><ul>
-<li><p><code>bp</code>插件模块中导入插件</p>
+<h3 id="2-gong-ju" id="2-工具">2. 工具</h3>
+<h4 id="1-turbo-intrude" id="1-Turbo-Intrude">1. Turbo Intrude</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>bp</code>插件模块中导入插件</p>
 <p>非定向爆破(单纯并发发送请求，不需要修改参数)：请求头中添加 <code>req: %s</code></p>
 <p>定向爆破(需要更改请求中某些字段值)：在该字段的值处设置<code>%s</code></p>
 </li>
-<li><p><code>bp</code>自带<code>Intrude</code>模块</p>
+<li class="lvl-2">
+<p><code>bp</code>自带<code>Intrude</code>模块</p>
 <p>按照下图方式设置</p>
-<p><img src="/../images/bp_intruder_concurrency.png" alt="image-20240809222548281"></p>
+<p><img src="../images/bp_intruder_concurrency.png" alt="image-20240809222548281"></p>
 </li>
 </ul>
 
@@ -358,13 +384,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/11/11/js%E6%9C%AA%E6%8E%88%E6%9D%83/" rel="prev" title="js未授权">
-                  <i class="fa fa-angle-left"></i> js未授权
+                <a href="/2024/11/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F&app%E6%8A%93%E5%8C%85/" rel="prev" title="app&amp;小程序抓包">
+                  <i class="fa fa-angle-left"></i> app&小程序抓包
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/11/17/hunter%E6%9F%A5%E8%AF%A2%E8%AF%AD%E6%B3%95/" rel="next" title="hunter查询语法">
-                  hunter查询语法 <i class="fa fa-angle-right"></i>
+                <a href="/2024/11/11/js%E6%9C%AA%E6%8E%88%E6%9D%83/" rel="next" title="未授权">
+                  未授权 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -396,13 +422,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">20k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">32 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
