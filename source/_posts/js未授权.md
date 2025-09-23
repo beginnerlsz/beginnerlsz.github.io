@@ -1,11 +1,11 @@
 ---
-layout:     post   				    # 使用的布局（不需要改）
-title:      未授权 				    # 标题 
-categories: SRC                        # 分类
-date:       2024-11-11 				# 时间
-author:     z1 						# 作者
-catalog: true 						# 是否归档
-tags:								# 标签
+layout:     post			# 使用的布局（不需要改）
+title:      js未授权 			# 标题 
+categories: SRC				# 分类
+date:       2024-11-11 			# 时间
+author:     z1 				# 作者
+catalog: true 				# 是否归档
+tags:					# 标签
     - src
 description: 通过js挖掘漏洞的思路
 ---
@@ -253,7 +253,7 @@ params
 
    直接修改`userstatus`的值 `0->1`,前端回显所有权限菜单。
 
-## 未授权漏洞fuzz技巧
+## 未授权漏洞测试技巧
 
 ### 1. 加参数
 
@@ -311,6 +311,11 @@ pageNum limit
   :::
 
 - 利用返回包的报错信息，结合可用接口的参数格式
+
+### 5. 500返回包处理方法
+
+- 加请求参数`pageNo` 和 `pageSize` ，注意这两个参数的写法，根据相应站点的格式更改；
+- 有的返回包会有报错信息，可以借助AI分析报错信息；
 
 
 
